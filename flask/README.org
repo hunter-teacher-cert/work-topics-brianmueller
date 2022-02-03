@@ -1,4 +1,10 @@
 * Last Name: Mueller
 * First Name: Brian
 
+```
+# enter venv
+microblog $ source venv/bin/activate
+
+# start flask
 microblog $ flask run
+```
