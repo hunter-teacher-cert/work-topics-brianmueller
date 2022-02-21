@@ -1,0 +1,60 @@
+.container {
+    margin: auto;
+    width: 80%;
+    border: 0px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+#ggd_header {
+    color: green;
+    text-decoration: none;
+}
+#ggd_header:hover {
+    color: darkgreen;
+}
+
+h1 {
+    /*margin:0;*/
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 6em;
+    line-height: 2em;
+    letter-spacing: 7px;
+    color: green;
+}
+
+h3 {
+    margin:60px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 4em;
+    line-height: 1em;
+    color: darkblue;
+}
+
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1em;
+    margin: 20px;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7em
+}
+
+.btn {
+    margin: 30px;
+}
+
+.btn-success {
+    background-color: green;
+}

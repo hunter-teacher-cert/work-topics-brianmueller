@@ -8,4 +8,12 @@ app = Flask(__name__)
 # the "root" route
 @app.route("/")
 def index():
-  return "<h1>Hello World</h1>"
+    return render_template("index.html")
+
+@app.route("/guess",methods=['POST'])
+def guess():
+    user_input = request.form['user_input']
+    user_color = 'red'
+    user_can = 'can'
+    
+    return render_template("guess.html", user_input=user_input, user_color = user_color, user_can = user_can)
