@@ -19,6 +19,10 @@
             {{user_can}}
         </span> go through the green glass door.
     </p>
+    <div id="stats">
+        <h4 class="green">Correct guesses: {{num_can}}</h4>
+        <h4 class="red">Incorrect guesses: {{num_cant}}</h4>
+    </div>
     <h3>Try again!</h3>
     <form method="POST" action="/guess">
         <p>
