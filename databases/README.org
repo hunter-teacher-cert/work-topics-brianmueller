@@ -1,3 +1,29 @@
-* Last Name:
-* First Name:
+* Last Name: Mueller
+* First Name: Brian
 
+https://colab.research.google.com/drive/15J-ZV1zgoQ2CJIZFIS3JxFQFdy_uhA3Q?usp=sharing
+
+HW:
+
+SELECT s.first, s.last, s.studentID, s.grade, s.scanTime, s.status, p.date, p.coursesection, p.attendance, p.teacher, p.period
+FROM scan AS s
+LEFT JOIN periodAtt as p
+ON s.studentID=p.studentID AND substr(s.scantime, 1, instr(s.scantime,' ')-1)=p.date
+WHERE attendance='A'
+ORDER BY s.last ASC
+
+
+
+ASYNC (Challenge #1):
+
+SELECT allCuts.teacher, COUNT(allCuts.teacher) 
+FROM ( 
+  SELECT s.first, s.last, s.studentID, s.grade, s.scanTime, s.status, p.date, p.coursesection, p.attendance, p.teacher, p.period
+  FROM scan AS s
+  LEFT JOIN periodAtt as p
+  ON s.studentID=p.studentID AND substr(s.scantime, 1, instr(s.scantime,' ')-1)=p.date
+  WHERE attendance='A'
+  ORDER BY s.last ASC
+) AS allCuts
+GROUP BY allCuts.teacher
+ORDER BY COUNT(allCuts.teacher) DESC
