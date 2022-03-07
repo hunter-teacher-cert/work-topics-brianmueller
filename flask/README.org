@@ -2,6 +2,7 @@
 * First Name: Brian
 
 ```
+$ pip install python-dotenv
 $ cd ggd
 $ source venv/bin/activate
 $ flask run
