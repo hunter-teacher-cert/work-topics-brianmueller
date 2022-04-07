@@ -69,16 +69,28 @@ proof3 = '0000' + str(random.randint(1,21000000))
 #Add your code below this line
 ####################################################
 # STEP 1 instantiate the blockchain object
+bc = Blockchain()
 
 # STEP 2 print the empty chain that has the genesis block with proof =100
+print(bc)
 
 # STEP 3 initiate the first transation of 1BTC from ___ to ___ by calling the new_transaction() on the object
+bc.new_transaction("Brian","Emily",34)
 
 # STEP 4 add the new block to the chain using the new_block() by passing a proof argument for each
+bc.new_block(proof1)
 
 # STEP 5 Print the chain with the new changes
+print(bc.chain)
 
 # STEP 6 Repeat steps 3-5 to record two more transactions
+bc.new_transaction("Emily","Amelia",33)
+bc.new_block(proof2)
+print(bc.chain)
+
+bc.new_transaction("Amelia","Madilyn",5)
+bc.new_block(proof3)
+print(bc.chain)
 
 #Note:(optional) You may add any formating sybmols to show how the chain looks at each phase
 
