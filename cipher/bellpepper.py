@@ -16,7 +16,7 @@ def encrypt(text,s):
       result += chr((ord(char) - 65 + s) % 26 + 65)
     else:
     # Async Work: Encrypt lowercase characters in plain text
-      result += "replace me with code"
+      result += chr((ord(char) - 97 + s) % 26 + 97)
   return result
 
   #enter alphabetic text without spaces and a desired shift
@@ -28,11 +28,17 @@ print("Shift pattern : " + str(s))
 print("Encrypted Text: " + encrypt(text,s))
 
 #Homework Bell Pepper Version: Write a function that decrypts a symmetric cipher with a given shift
-text = " "
+text = "BAba"
 s = 27
 
 def decrypt(text,s):
   result = ""
+  for i in range(len(text)):
+    char = text[i]
+    if(char.isupper()):
+      result += chr((ord(char) - 65 - s) % 26 + 65)
+    else:
+      result += chr((ord(char) - 97 - s) % 26 + 97)
   return result
 
 print("Encrypted Text : " + text)
