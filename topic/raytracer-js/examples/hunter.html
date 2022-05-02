@@ -12,7 +12,27 @@
 
 <h1>RayTracer.js - Hunter Example<br>Example 3 with customizable inputs</h1>
 
-<input id="startButtonId" type="button" value="Start Rendering" />
+<!-- <input id="startButtonId" type="button" value="Start Rendering" /> -->
+
+<pre>
+    scene.add(
+        new Sphere(
+            new Vector3( // center
+                <input value="0" size="6" id="sphereX">, // x
+                <input value="0" size="6" id="sphereY">, // y
+                <input value="-20" size="6" id="sphereZ"> // z
+            ), 
+            <input value="4" size="4" id="sphereRad">, // radius
+            new Material( // material
+                new Vector3(<input value="1.00" size="3" id="sphereR">, <input value="0.32" size="3" id="sphereG">, <input value="0.36" size="3" id="sphereB">), // surface color (r,g,b)
+                1.0, // reflection (ignore this)
+                0.5, // transparency (ignore this)
+                <!-- <input value="1.0" size="6" id="sphereReflection">, // reflection (ignore this) -->
+                <!-- <input value="0.5" size="6" id="sphereTransparency">, // transparency (ignore this) -->
+                new Vector3()) // emissionColor (lights only)
+        )
+    );
+</pre>
 
 <br>
 <br>
