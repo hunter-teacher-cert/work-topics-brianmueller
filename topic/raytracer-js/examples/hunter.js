@@ -18,7 +18,7 @@ scene.add(
                new Material(new Vector3(0.2, 0.2, 0.2), 0, 0, new Vector3()))
 );
 
-// add spheres
+// sphere
 var sphere1 = new Sphere(
     new Vector3(0, 0, -20), // center
     4, // radius
@@ -29,33 +29,19 @@ var sphere1 = new Sphere(
         new Vector3() // emissionColor (lights only)
     )
 );
-scene.add(sphere1);
 
-// var sphere2 = new Sphere(new Vector3(5, -1, -15), 2,
-//                          new Material(new Vector3(0.9, 0.76, 0.46), 1, 0, new Vector3()));
-// scene.add(sphere2);
-
-// var sphere3 = new Sphere(new Vector3(5, 0, -25), 3,
-//                          new Material(new Vector3(0.65, 0.77, 0.97), 1, 0, new Vector3()));
-// scene.add(sphere3);
-
-// var sphere4 = new Sphere(new Vector3(-5.5, 0, -15), 3,
-//                          new Material(new Vector3(0.9, 0.9, 0.9), 1, 0, new Vector3()));
-// scene.add(sphere4);
-
-// bg light
+// background/top light (can toggle)
 var lightBG = new Sphere(
-                new Vector3(0, 20, -30), // center
-                3, // radius
-                new Material(
-                    new Vector3(), // color
-                    0, // reflection
-                    0, // transparency
-                    new Vector3(0,0,0) // emissionColor (lights only)
-                ) 
-            );
+    new Vector3(0, 20, -30), // center
+    3, // radius
+    new Material(
+        new Vector3(), // color
+        0, // reflection
+        0, // transparency
+        new Vector3(0,0,0) // emissionColor (lights only)
+    ) 
+);
 scene.add(lightBG);
-
 
 // main light
 var light1 = new Sphere(
@@ -68,7 +54,6 @@ var light1 = new Sphere(
         new Vector3(1, 1, 1)
     )
 );
-scene.add(light1);
 
 // -------------------------------
 // -------------------------------
@@ -83,6 +68,55 @@ var canvasHeight = canvas.height;
 
 var startTime = Date.now();
 var frameCount = 0;
+
+
+// template
+// var myShape = new Sphere(
+//     new Vector3(0, 0, -20), // center
+//     4, // radius
+//     new Material(
+//         new Vector3(1.0, 0.0, 0.0), // color
+//         0, // reflection
+//         0,  // transparency
+//         new Vector3() // emissionColor (lights only)
+//     )
+// );
+// scene.add(myShape)
+
+
+// BREAKOUT ROOMS (if time)
+// Comment out `scene.add(sphere1)` below
+// Use the template above to try adding your own shape(s)/light(s)!
+
+
+
+
+// HOMEWORK
+
+// TASK 1: Create a traffic signal
+    // When you are ready, make sure `scene.add(sphere1)` is commented out
+    // Create red, yellow, and green spheres stacked like a traffic signal
+    // The sizes/locations don't need to match the diagram exactly
+
+
+// TASK 2: Two rear lights
+    // When you are ready, make sure `scene.add(light1)` is commented out
+    // Create two symmetrical lights that are behind and to the side of the traffic signal
+    // The output does not need to match the diagram exactly, but the spheres should not be lit from the front
+
+
+
+// SCENE ITEMS
+scene.add(sphere1);
+scene.add(light1);
+
+// END HOMEWORK
+
+
+
+
+
+
 
 // var create render planner
 var bufferPieces = [];
@@ -114,10 +148,7 @@ renderPlanner.onUpdateReceived = function(sectionStart, sectionHeight, buf8)
         setTimeout(function(){
             // light1.center = new Vector3(10*Math.sin(Date.now()/2000), 10, -30);
             // sphere1.center = new Vector3(0, 5*Math.sin(Date.now()/1000), -20);
-            // sphere2.center = new Vector3(5, -1*Math.sin(Date.now()/500), -15);
-            // sphere3.center = new Vector3(5, 6*Math.cos(Date.now()/1000), -25);
-            // sphere4.center = new Vector3(-5.5, 3*Math.cos(Date.now()/1000), -15);
-
+            
             // BEGIN CUSTOM CODE
             
             // SPHERE
