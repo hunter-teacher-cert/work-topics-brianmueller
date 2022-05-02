@@ -20,15 +20,15 @@ scene.add(
 
 // add spheres
 var sphere1 = new Sphere(
-                new Vector3(0, 0, -20), // center
-                4, // radius
-                new Material(
-                    new Vector3(1.00, 0.32, 0.36), // color
-                    1, // reflection
-                    0.5,  // transparency
-                    new Vector3() // emissionColor (lights only)
-                )
-            );
+    new Vector3(0, 0, -20), // center
+    4, // radius
+    new Material(
+        new Vector3(1.0, 0.0, 0.0), // color
+        0, // reflection
+        0,  // transparency
+        new Vector3() // emissionColor (lights only)
+    )
+);
 scene.add(sphere1);
 
 // var sphere2 = new Sphere(new Vector3(5, -1, -15), 2,
@@ -43,33 +43,33 @@ scene.add(sphere1);
 //                          new Material(new Vector3(0.9, 0.9, 0.9), 1, 0, new Vector3()));
 // scene.add(sphere4);
 
-// add light
-// var light1 = new Sphere(
-//                 new Vector3(0, 20, -30), // center
-//                 3, // radius
-//                 new Material(
-//                     new Vector3(), // color
-//                     0, // reflection
-//                     0, // transparency
-//                     new Vector3(1.2, 1.2, 1.2) // emissionColor (lights only)
-//                 ) 
-//             );
-// scene.add(light1);
+// bg light
+var lightBG = new Sphere(
+                new Vector3(0, 20, -30), // center
+                3, // radius
+                new Material(
+                    new Vector3(), // color
+                    0, // reflection
+                    0, // transparency
+                    new Vector3(0,0,0) // emissionColor (lights only)
+                ) 
+            );
+scene.add(lightBG);
 
 
 // main light
-scene.add(
-    new Sphere(
-        new Vector3(0, 10, 10), // center
-        3, // radius
-        new Material(
-            new Vector3(), // color
-            0, // reflection
-            0, // transparency
-            new Vector3(1, 1, 1)
-        )
+var light1 = new Sphere(
+    new Vector3(0, 10, 10), // center
+    1, // radius
+    new Material(
+        new Vector3(), // color
+        0, // reflection
+        0, // transparency
+        new Vector3(1, 1, 1)
     )
 );
+scene.add(light1);
+
 // -------------------------------
 // -------------------------------
 var backgroundColor = new Vector3(2.0, 2.0, 2.0);
@@ -120,22 +120,35 @@ renderPlanner.onUpdateReceived = function(sectionStart, sectionHeight, buf8)
 
             // BEGIN CUSTOM CODE
             
-            let x = document.querySelector('#sphereX').value;
-            let y = document.querySelector('#sphereY').value;
-            let z = document.querySelector('#sphereZ').value;
-            // console.log(x, y, z)
-            let rad = document.querySelector('#sphereRad').value;
-            let r = document.querySelector('#sphereR').value;
-            let g = document.querySelector('#sphereG').value;
-            let b = document.querySelector('#sphereB').value;
-            // let reflection = document.querySelector('#sphereReflection').value;
-            // let transparency = document.querySelector('#sphereTransparency').value;
+            // SPHERE
+            let sphereX = document.querySelector('#sphereX').value;
+            let sphereY = document.querySelector('#sphereY').value;
+            let sphereZ = document.querySelector('#sphereZ').value;
+            let sphereRad = document.querySelector('#sphereRad').value;
+            let sphereR = document.querySelector('#sphereR').value;
+            let sphereG = document.querySelector('#sphereG').value;
+            let sphereB= document.querySelector('#sphereB').value;
+            // let sphereReflection = document.querySelector('#sphereReflection').value;
+            // let sphereTransparency = document.querySelector('#sphereTransparency').value;
+            sphere1.center = new Vector3(sphereX, sphereY, sphereZ);
+            sphere1.radius = sphereRad;
+            sphere1.radius2 = sphereRad*sphereRad;
+            sphere1.material = new Material(new Vector3(sphereR,sphereG,sphereB), 1.0, 0.5, new Vector3());
 
-            sphere1.center = new Vector3(x, y, z);
-            // console.log(rad)
-            sphere1.radius = rad;
-            sphere1.radius2 = rad*rad;
-            sphere1.material = new Material(new Vector3(r,g,b), 1.0, 0.5, new Vector3());
+            // LIGHT
+            let lightX = document.querySelector('#lightX').value;
+            let lightY = document.querySelector('#lightY').value;
+            let lightZ = document.querySelector('#lightZ').value;
+            // let lightRad = document.querySelector('#lightRad').value;
+            let lightR = document.querySelector('#lightR').value;
+            let lightG = document.querySelector('#lightG').value;
+            let lightB= document.querySelector('#lightB').value;
+            // let lightReflection = document.querySelector('#lightReflection').value;
+            // let lightTransparency = document.querySelector('#lightTransparency').value;
+            light1.center = new Vector3(lightX, lightY, lightZ);
+            // light1.radius = lightRad;
+            // light1.radius2 = lightRad*lightRad;
+            light1.material = new Material(new Vector3(), 0, 0, new Vector3(lightR,lightG,lightB));
 
             // END CUSTOM CODE
 
