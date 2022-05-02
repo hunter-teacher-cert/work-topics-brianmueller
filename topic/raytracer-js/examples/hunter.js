@@ -150,6 +150,13 @@ renderPlanner.onUpdateReceived = function(sectionStart, sectionHeight, buf8)
             // light1.radius2 = lightRad*lightRad;
             light1.material = new Material(new Vector3(), 0, 0, new Vector3(lightR,lightG,lightB));
 
+            // background light toggle
+            if(document.querySelector('input[name="lightBG"]').checked){
+                lightBG.material = new Material(new Vector3(), 0, 0, new Vector3(1,1,1));
+            } else {
+                lightBG.material = new Material(new Vector3(), 0, 0, new Vector3(0,0,0));
+            }
+
             // END CUSTOM CODE
 
             renderPlanner.updateScene();
