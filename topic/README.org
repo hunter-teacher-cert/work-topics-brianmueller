@@ -5,7 +5,11 @@
  - Peter Tsun
 
 * Describe your topic here
+
 Ray Tracing is the concept of using vectors (rays) to trace the paths of light within a 3D scene to render a 2D image from a certain perspective. Each pixel in the rectangular 2D image is determined by evaluating the ray from the perspective to the nearest object, and determining the rays of light that hit that particular object. Effective implementations of ray tracing can render images that look realistic by calculating shadows, reflections, and other nuances of light.
  
 * Describe any additional files you've included here 
  
+The *raytracery-js* folder has been added which includes two important files:
+* examples/hunter.html which allows students to interact with values of spheres/lights
+* examples/hunter.js where students will write their own code for the homework
