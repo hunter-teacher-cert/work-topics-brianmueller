@@ -13,3 +13,6 @@ Ray Tracing is the concept of using vectors (rays) to trace the paths of light w
 The *raytracery-js* folder has been added which includes two important files:
 * examples/hunter.html which allows students to interact with values of spheres/lights
 * examples/hunter.js where students will write their own code for the homework
+
+The REPL below can be used for easy/quick interaction:
+https://replit.com/@briansmueller/raytracer-js
